@@ -1,0 +1,129 @@
+
+  <ion-content >
+   
+ 
+    <head>
+      <!-- Required meta tags -->
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+      <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+      <!-- Bootstrap CSS -->
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  
+     </head>
+  
+    <body>
+    <div class="d-flex justify-content-start ml-3"><h3>Experiencia laboral</h3></div>
+  
+   
+      
+      <div class="container-fluid ">
+        <div class="row justify-content-center align-items-center">
+          <img src="../../assets/experiencia.png" alt="">
+        </div>
+      
+        <div class="row justify-content-center align-items-center h-100 mt-4" >
+          <div class="col col-sm-6 col-md-6 col-lg-4 col-xl-3">
+            <form #userPost="ngForm" (ngSubmit)="onSubmit(userPost.value)">
+          
+              <div class="form-group">
+                <label class="sr-only" for="empresa">Empresa donde se desmpeño</label>
+                <div class="input-group mb-2">
+                  <div class="input-group-prepend">
+                    <div class="input-group-text"><i class="far fa-building"></i></div>
+                  </div>
+                  <input type="text" name="empresa" [(ngModel)]="Empresa" class="form-control" id="empresa" placeholder="Empresa donde se desmpeño">
+                </div>
+              </div>
+              <div class="form-group">
+                <label class="sr-only" for="cargoO"> </label>
+                <div class="input-group mb-2">
+                  <div class="input-group-prepend">
+                    <div class="input-group-text"><i class="fas fa-street-view"></i></div>
+                  </div>
+                  <input type="text" [(ngModel)]="cargoOcupado" name="cargo_ocupado" class="form-control" id="cargoO" placeholder="cargo ocupado">
+                </div>
+              </div>
+  
+              <div class="form-group">
+                <label class="sr-only" for="CorreoRegistro"></label>
+                <div class="input-group mb-2">
+                  <div class="input-group-prepend">
+                    <div class="input-group-text"><i class="fas fa-mail-bulk"></i></div>
+                  </div>
+                  <input type="text" [(ngModel)]="Estado" name="estado" class="form-control" id="CorreoRegistro" placeholder="estado">
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label class="sr-only" for="CiudadR"></label>
+                <div class="input-group mb-2">
+                  <div class="input-group-prepend">
+                    <div class="input-group-text"><i class="fas fa-city"></i></div>
+                  </div>
+                  <input type="text" [(ngModel)]="Ciudad" name="ciudad" class="form-control" id="CiudadR" placeholder="ciudad">
+                </div>
+              </div>
+  
+   
+           
+  
+             
+         
+              <div class="form-group">
+                <label class="sr-only" for="labelFecha2"></label>
+                <div class="input-group mb-2">
+                  <div class="input-group-prepend">
+                    <div class="input-group-text"><i class="fas fa-calendar-day"></i></div>
+                  </div>
+                  <input type="text" [(ngModel)]="periodoInicio" name="periodo" class="form-control" id="labelFecha2" placeholder="fecha de inicio de inicio" onfocus="(this.type='date')" >
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label class="sr-only" for="labelFecha"></label>
+                <div class="input-group mb-2">
+                  <div class="input-group-prepend">
+                    <div class="input-group-text"><i class="fas fa-calendar-day"></i></div>
+                  </div>
+                  <input type="text" [(ngModel)]="periodoTermino" name="periodo_termino" class="form-control" id="labelFecha" placeholder="fecha de termino" onfocus="(this.type='date')" >
+                </div>
+              </div>
+
+
+
+    
+  
+
+       
+                  
+              <br><br><br><br>
+
+              
+             
+ 
+  
+             
+                
+                <button type="submit" class="btn btn-block">Agregar</button><br>
+                
+            
+                
+      
+            </form>
+          </div>
+        </div>
+      </div>
+  
+      <!-- Optional JavaScript -->
+      <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+      <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    </body>
+
+ 
+ 
+  </ion-content>
+
+

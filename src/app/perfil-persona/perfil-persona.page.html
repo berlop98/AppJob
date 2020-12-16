@@ -1,0 +1,84 @@
+<ion-header >
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button>
+        Menu
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header><br>
+
+<ion-content >
+  <ion-grid  >
+
+  
+    <ion-row class="ion-margin-start"  *ngIf="tipo==='moral'" >
+      <ion-row *ngFor="let m of Moral | async" lines="none">
+        
+        <ion-col size=6 style=" margin-left: 80px;" >
+          <img src="{{m.foto}}" id="imagen">
+        </ion-col>
+        <ion-col size=12>
+          <h1>Datos del ofertante</h1>
+        </ion-col>
+        <ion-col size=1 class="ion-align-self-center" >
+          <ion-icon name="person-circle-outline"></ion-icon>
+          </ion-col>
+          <ion-col size=11><p >{{m.Razon_social}}</p></ion-col>
+  
+          <ion-col size=1 class="ion-align-self-center" >
+            <ion-icon name="paper-plane-outline"></ion-icon>
+            </ion-col>
+            <ion-col size=11><p >{{m.giro_empresarial}}</p></ion-col>
+  
+            <ion-col size=1 class="ion-align-self-center" >
+              <ion-icon name="globe-outline"></ion-icon>
+              </ion-col>
+              <ion-col size=11><p >{{m.pagina_web}}</p></ion-col>
+  
+              <ion-col size=1 class="ion-align-self-center"  >
+                <ion-icon name="mail-outline"></ion-icon>
+                </ion-col>
+                <ion-col size=11  ><p >{{m.email_contacto}}</p></ion-col>
+  
+                <ion-col size=1 class="ion-align-self-center"  >
+                  <ion-icon name="logo-whatsapp"></ion-icon>
+                  </ion-col>
+                  <ion-col size=11  ><p >{{m.telefono_contacto}}</p></ion-col>
+      </ion-row>
+      </ion-row>
+
+
+      <ion-row class="ion-margin-start"  *ngIf="tipo==='fisica'" >
+        <ion-row *ngFor="let f of Fisica | async" lines="none">
+          
+          <ion-col size=6 style="margin-top: 100px; margin-left: 100px;" >
+            <img src="{{f.foto}}" id="imagen">
+          </ion-col>
+          <ion-col size=12>
+            <h1>Datos del ofertante</h1>
+          </ion-col>
+          <ion-col size=1 class="ion-align-self-center" >
+            <ion-icon name="person-circle-outline"></ion-icon>
+            </ion-col>
+            <ion-col size=11><p >{{f.Nombre}} {{f.Apellido}}</p></ion-col>
+    
+            <ion-col size=1 class="ion-align-self-center" >
+              <ion-icon name="paper-plane-outline"></ion-icon>
+              </ion-col>
+              <ion-col size=11><p >Nacimiento: {{f.fecha_nacimiento}}</p></ion-col>
+    
+              <ion-col size=1 class="ion-align-self-center"  >
+                    <ion-icon name="logo-whatsapp"></ion-icon>
+                    </ion-col>
+                    <ion-col size=11  ><p >{{f.telefono}}</p></ion-col>
+        </ion-row>
+        </ion-row>
+  
+
+      
+
+ 
+  </ion-grid>
+
+</ion-content>

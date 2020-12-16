@@ -1,0 +1,104 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button>
+        Cancelar
+      </ion-button>
+    </ion-buttons>
+
+  
+  </ion-toolbar>
+  
+</ion-header>
+
+<ion-content>
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+   </head>
+  <body>
+    <div class="d-flex justify-content-start ml-3"><h3>Formacion academica</h3></div>
+  
+   
+
+        <div class="row justify-content-center align-items-center m-2 "  *ngFor="let formacion of Forma | async" lines="none" >
+          <div class="col col-sm-6 col-md-6 col-lg-4 col-xl-3">
+            <form #userPost="ngForm" (ngSubmit)="Actualiza(userPost.value)" >
+          
+              <div class="form-group">
+                <h6>Institucion</h6>
+                <label class="sr-only" for="institucion">Institucion</label>
+                <div class="input-group mb-2">
+                  <div class="input-group-prepend">
+                    <div class="input-group-text"><i class="fas fa-university"></i></div>
+                  </div>
+                  <input type="text" name="institucion" [(ngModel)]="Institucion" class="form-control" id="NivelE" placeholder="{{formacion.institucion}}">
+                </div>
+              </div>
+              <div class="form-group">
+                <h6>Nivel de estudio</h6>
+                <label class="sr-only" for="NivelE">Nivel de estudio </label>
+                <div class="input-group mb-2">
+                  <div class="input-group-prepend">
+                    <div class="input-group-text"><i class="fas fa-level-up-alt"></i></div>
+                  </div>
+                  <input type="text" [(ngModel)]="NivelEstudio" name="nivel_estudio" class="form-control" id="NivelE" placeholder="{{formacion.nivel_estudio}}">
+                </div>
+              </div>
+  
+              <div class="form-group">
+                <h6>area de estudio</h6>
+                <label class="sr-only" for="CorreoRegistro">area de estudio</label>
+                <div class="input-group mb-2">
+                  <div class="input-group-prepend">
+                    <div class="input-group-text"><i class="fas fa-globe"></i></div>
+                  </div>
+                  <input type="text" [(ngModel)]="areaE" name="area_estudio" class="form-control" id="CorreoRegistro" placeholder="{{formacion.area_estudio}}">
+                </div>
+              </div>
+  
+           
+  
+             
+         
+              <div class="form-group">
+                <h6>periodo de inicio</h6>
+                <label class="sr-only" for="labelFecha2">periodo de inicio</label>
+                <div class="input-group mb-2">
+                  <div class="input-group-prepend">
+                    <div class="input-group-text"><i class="fas fa-calendar-day"></i></div>
+                  </div>
+                  <input type="text" [(ngModel)]="periodoInicio" name="periodo_inicio" class="form-control" id="labelFecha2" placeholder="{{formacion.periodo_inicio}}" onfocus="(this.type='date')" >
+                </div>
+              </div>
+
+              <div class="form-group">
+                <h6>periodo de termino</h6>
+                <label class="sr-only" for="labelFecha">periodo de termino</label>
+                <div class="input-group mb-2">
+                  <div class="input-group-prepend">
+                    <div class="input-group-text"><i class="fas fa-calendar-day"></i></div>
+                  </div>
+                  <input type="text" [(ngModel)]="periodoTermino" name="periodo_termino" class="form-control" id="labelFecha" placeholder="{{formacion.periodo_termino}}" onfocus="(this.type='date')" >
+                </div>
+              </div>
+              <input type="submit" class="btn btn-block" value="Actualizar" >
+            </form>
+          </div>
+        </div>
+
+      <!-- Optional JavaScript -->
+      <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+      <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    </body>
+
+ 
+
+</ion-content>

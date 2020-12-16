@@ -1,0 +1,61 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>
+      Vacantes disponibles
+    </ion-title>
+    <ion-buttons slot="start">
+      <ion-menu-button menu="main-menu"></ion-menu-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="cards-bg social-cards" >
+
+  <ion-card *ngFor="let aspirante of Aspirantes | async" lines="none"  (click)="Detalles(aspirante.id_vacante)">
+    <ion-item>
+      <ion-avatar slot="start">  
+        <img src="../../assets/vacante.png">
+      </ion-avatar>
+      <ion-label>
+        <h2 style="font-size: 15px;">{{aspirante.puesto}}</h2>
+        <p><ion-icon name="location-outline"></ion-icon> {{aspirante.estado}}, {{aspirante.ciudad}}</p>
+        
+      </ion-label>
+    </ion-item> 
+  
+    
+    
+    <ion-card-content>
+      <ion-row>
+        <ion-col size=12>
+          <h2 style="color: black;">{{aspirante.descripcion}}</h2>
+        </ion-col>
+        <ion-col size=6>
+          <button>
+            <p style="font-size: large;">${{aspirante.sueldo}}</p>
+          </button>
+        </ion-col>
+       
+        <ion-col size=6 style="text-align: end;">
+         
+            
+            <div>{{aspirante.fecha_publicacion | date }}</div>
+         
+        </ion-col>
+      </ion-row>
+    
+    </ion-card-content>
+
+   
+  </ion-card>
+
+  </ion-content>
+
+
+
+  
+
+
+  
+
+

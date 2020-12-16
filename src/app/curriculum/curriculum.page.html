@@ -1,0 +1,255 @@
+
+<ion-content>
+    <ion-grid >
+        <ion-row>
+            <img src="../../assets/fondo.jpeg" alt="">
+        </ion-row>
+
+       
+        <ion-row>
+            <ion-col size=12>
+                <h1 class="titulo1">Informacion Personal</h1>
+            </ion-col>
+
+            <ion-col size=12 *ngFor="let aspira of Aspirantes | async" lines="none"  >
+                <!-- List of Input Items -->
+                <ion-list>
+                    <ion-item>
+                        <ion-label (click)="ActualizaPerfil(aspira.idAspirante)">
+                            <h2 class="titulo2">{{aspira.Nombre}}</h2>
+                            <p>{{aspira.estado}} {{aspira.ciudad}}</p>
+                            <p>{{aspira.municipio}}</p>
+                            <p>{{aspira.domicilio}}</p>
+                            <p>{{aspira.Area_trabajo}}</p>
+                            <p>{{aspira.cargo_deseado}}</p>
+                            <p>Nacido en {{aspira.fecha_Nacimiento}}</p>
+                          </ion-label>
+                    </ion-item>
+                  </ion-list>
+            </ion-col>
+     
+        </ion-row> 
+        <div>
+
+            <ion-row class="bordes ion-margin" *ngIf="formaciones === 'vacio' ">
+                <ion-col size=12>
+                    <p class="titulo1">Formacion</p>
+                </ion-col>
+                <ion-col size=12>
+                    <ion-text>detalla tu formacion academica y extracurricular, incluyendo los cursos y actividades que consideres interesantes </ion-text>
+                </ion-col>
+    
+                <ion-col size=1 class="ion-align-self-center">
+                <img src="../../assets/anadir.png" height="15px">
+                </ion-col>
+                <ion-col size=11><p style="color: blue;" (click)="AgregaFormacion()">Añade formacion</p></ion-col>
+            </ion-row>
+    
+            <ion-row *ngIf="formaciones === 'lleno' ">
+                <ion-col size=12>
+                    <p class="titulo1">Formacion Academica</p>
+                </ion-col>
+    
+    
+                <ion-col size=12 *ngFor="let formacion of Formacion | async" lines="none" >
+                    <ion-list>
+                        <ion-item>
+                            <ion-label (click)="ActualizaFormacion(formacion.id_Formacion)">
+                                <h1 class="titulo2">{{formacion.institucion}}</h1>
+                                <p class="sub1">{{formacion.periodo_inicio}} a {{formacion.periodo_termino}}</p>
+                                <h2 class="sub2">{{formacion.nivel_estudio}}</h2>
+                                <p>{{formacion.area_estudio}}</p>
+                              </ion-label>
+                        </ion-item>
+                      </ion-list>
+    
+                </ion-col>
+                <ion-col size=1 class="ion-align-self-center ion-margin-start">
+                    <img src="../../assets/anadir.png" height="15px">
+                </ion-col>
+                <ion-col size=8><p style="color: blue;" (click)="AgregaFormacion()">Añade formacion</p></ion-col>
+            </ion-row>
+
+       
+        </div>
+        <div>
+            <ion-row class="bordes ion-margin" *ngIf="idioma === 'vacio' ">
+                <ion-col size=12>
+                    <p class="titulo1">Idiomas</p>
+                </ion-col>
+    
+                <ion-col size=12>
+                    <p>Indica todos los idiomas que hables
+                    </p>
+                </ion-col>
+    
+                <ion-col size=1 class="ion-align-self-center">
+                <img src="../../assets/anadir.png" height="15px">
+                </ion-col>
+                <ion-col size=11><p style="color: blue;" (click)="AgregaIdioma()">Agrega idioma</p></ion-col>
+            </ion-row>
+    
+            <ion-row *ngIf="idioma === 'lleno' ">
+                <ion-col size=12>
+                    <p class="titulo1">Idiomas</p>
+                </ion-col>
+    
+    
+                <ion-col size=12 *ngFor="let idiomas of Idioma | async" lines="none" >
+                    <ion-list>
+                        <ion-item>
+                            <ion-label (click)="ActualizaIdioma(idiomas.id_Idioma, idiomas.porcentaje, idiomas.Nombre)">
+                                <p class="titulo2">{{idiomas.Nombre}} </p> 
+                                <p>hablado en un {{idiomas.porcentaje}}%</p>
+                              </ion-label>
+                        </ion-item>
+                      </ion-list>
+    
+                </ion-col>
+                <ion-col size=1 class="ion-align-self-center ion-margin-start">
+                    <img src="../../assets/anadir.png" height="15px">
+                </ion-col>
+                <ion-col size=8><p style="color: blue;" (click)="AgregaIdioma()">Agrega idioma</p></ion-col>
+            </ion-row>
+
+        </div>
+
+        <div>
+            <ion-row class="bordes ion-margin" *ngIf="hab === 'vacio' ">
+                <ion-col size=12>
+                    <p class="titulo1">Habilidades</p>
+                </ion-col>
+    
+                <ion-col size=12>
+                    <p>Resume tus principales virtudes y habilidades que te ayudaran en el marco laboral
+                    </p>
+                </ion-col>
+    
+                <ion-col size=1 class="ion-align-self-center">
+                <img src="../../assets/anadir.png" height="15px">
+                </ion-col>
+                <ion-col size=11><p style="color: blue;" (click)="AgregaHabilidades()">Agrega tus habilidades</p></ion-col>
+            </ion-row>
+    
+            <ion-row *ngIf="hab === 'lleno' ">
+                <ion-col size=12>
+                    <p class="titulo1">Habilidades</p>
+                </ion-col>
+    
+    
+                <ion-col size=12 *ngFor="let habilidad of Habilidad | async" lines="none" >
+                    <ion-list>
+                        <ion-item>
+                            <ion-label (click)="ActualizaHabilidad(habilidad.descripcion, habilidad.id_Habilidad)">
+                                <p >{{habilidad.descripcion}}</p> 
+                                
+                              </ion-label>
+                        </ion-item>
+                      </ion-list>
+    
+                </ion-col>
+                <ion-col size=1 class="ion-align-self-center ion-margin-start">
+                    <img src="../../assets/anadir.png" height="15px">
+                </ion-col>
+                <ion-col size=8><p style="color: blue;" (click)="AgregaHabilidades()">Agrega otra habilidad</p></ion-col>
+            </ion-row>
+
+        </div>
+
+        <div>
+            <ion-row class="bordes ion-margin" *ngIf="exp === 'vacio' ">
+                <ion-col size=12>
+                    <p class="titulo1">Experiencia laboral</p>
+                </ion-col>
+    
+                <ion-col size=12>
+                    <p>Resume tus principales virtudes y habilidades que te ayudaran en el marco laboral
+                    </p>
+                </ion-col>
+    
+                <ion-col size=1 class="ion-align-self-center" >
+                <img src="../../assets/anadir.png" height="15px">
+                </ion-col>
+                <ion-col size=11><p style="color: blue;" (click)="AgregaExperiencia()">Agrega experiencia</p></ion-col>
+            </ion-row>
+    
+            <ion-row *ngIf="exp === 'lleno' ">
+                <ion-col size=12>
+                    <p class="titulo1">Experiencia laboral</p>
+                </ion-col>
+    
+    
+                <ion-col size=12 *ngFor="let experiencia of Experiencia | async" lines="none" >
+                    <ion-list>
+                        <ion-item>
+                            <ion-label (click)="ActualizaExperiencia(experiencia.id_Experiencia,experiencia.empresa, experiencia.cargo_ocupado, experiencia.estado, experiencia.ciudad, experiencia.fecha_inicio, experiencia.fecha_termino)">
+                                <p class="titulo2">{{experiencia.empresa}} </p> 
+                                <p>{{experiencia.cargo_ocupado}}</p>
+                                <p> {{experiencia.estado}}</p>
+                                <p>{{experiencia.ciudad}}</p>
+                                <p>de {{experiencia.fecha_inicio}} a {{experiencia.fecha_termino}}</p>
+                                
+                              </ion-label>
+                        </ion-item>
+                      </ion-list>
+    
+                </ion-col>
+                <ion-col size=1 class="ion-align-self-center ion-margin-start">
+                    <img src="../../assets/anadir.png" height="15px">
+                </ion-col>
+                <ion-col size=8><p style="color: blue;" (click)="AgregaExperiencia()">Agrega experiencia</p></ion-col>
+            </ion-row>
+
+        </div>
+
+
+        
+        <div>
+            <ion-row class="bordes ion-margin" *ngIf="esp==='vacio'">
+                <ion-col size=12>
+                    <p class="titulo1">Especializacion</p>
+                </ion-col>
+    
+                <ion-col size=12>
+                    <p>Detalla tu especializacion academica y/o extracurricular en caso de que hayas estudiado mas alla de la licenciatura
+                    </p>
+                </ion-col>
+    
+                <ion-col size=1 class="ion-align-self-center" >
+                <img src="../../assets/anadir.png" height="15px">
+                </ion-col>
+                <ion-col size=11><p style="color: blue;" (click)="AgregaEspecialidad()">Agrega especialidad</p></ion-col>
+            </ion-row>
+    
+            <ion-row *ngIf="esp==='lleno'">
+                <ion-col size=12>
+                    <p class="titulo1">especialidad</p>
+                </ion-col>
+    
+    
+                <ion-col size=12 *ngFor="let especializacion of Especialidad | async" lines="none" >
+                    <ion-list>
+                        <ion-item>
+                            <ion-label (click)="ActualizaEspecializacion(especializacion.id_Especializacion,especializacion.institucion, especializacion.area_estudio, especializacion.nombre_especializacion, especializacion.periodo_inicio, especializacion.periodo_termino)">
+                                <p class="titulo2">{{especializacion.institucion}} </p> 
+                                <p>{{especializacion.area_estudio}}</p>
+                                <p> {{especializacion.nombre_especializacion}}</p>
+                                <p>de {{especializacion.periodo_inicio}} a {{especializacion.periodo_termino}}</p>
+                                
+                              </ion-label>
+                        </ion-item>
+                      </ion-list>
+    
+                </ion-col>
+                <ion-col size=1 class="ion-align-self-center ion-margin-start">
+                    <img src="../../assets/anadir.png" height="15px">
+                </ion-col>
+                <ion-col size=8><p style="color: blue;" (click)="AgregaEspecialidad()">Agrega especializacion</p></ion-col>
+            </ion-row>
+
+        </div>
+
+
+
+    </ion-grid>
+</ion-content>

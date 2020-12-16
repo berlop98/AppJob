@@ -1,0 +1,36 @@
+<ion-toolbar>
+  <ion-buttons slot="start">
+    <ion-button (click)="regresar()">
+      Regresar
+    </ion-button>
+  </ion-buttons>
+  
+
+</ion-toolbar>
+
+<ion-content>
+  <ion-list>
+    <ion-item  *ngFor="let postulacion of postu | async" lines="none" id="itemPostulacion" >
+      <ion-avatar slot="start">
+        <img src="../../assets/jobs.png" alt="">
+      </ion-avatar>
+      <ion-label>
+        <h2 style="color:darkorchid">{{postulacion.puesto}}</h2>
+        <h5 >fecha de postulacion:</h5> <p>{{postulacion.fecha_postulacion}}</p>
+        <h5>sueldo:</h5><p>${{postulacion.sueldo}}</p>
+        <h5>Estatus:</h5>
+        <p style="color:deepskyblue;" *ngIf="postulacion.estatus_postulacion === 'N' "> NO ACEPTADA</p>
+        <p style="color: deepskyblue;" *ngIf="postulacion.estatus_postulacion === 'S' "> ACEPTADA</p>
+
+      </ion-label>
+      <ion-avatar slot="end">
+          <img *ngIf="postulacion.estatus_postulacion === 'N'" src="../../assets/espera.png" alt="">
+          <img *ngIf="postulacion.estatus_postulacion === 'S'" src="../../assets/aceptada.png" alt="">
+      </ion-avatar>
+    </ion-item>
+    
+  </ion-list>
+  
+
+
+</ion-content>

@@ -1,0 +1,20 @@
+ion-content{
+    --background: none;
+  background-image: url('../../assets/fondoP.png');
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+#imagen{
+    width:200px;
+    height:auto;
+    -webkit-border-radius: 50%;
+    border-radius: 50%;
+    text-align: center;
+}
+
+h1{
+  font-weight: bold;
+  font-size: 30px;
+}

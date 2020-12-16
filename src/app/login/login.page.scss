@@ -1,0 +1,51 @@
+
+   // ion-content.background{
+   //     --background: url(../../assets/icon/loginBack.jpg) 0 0/100% 100% no-repeat;
+     //   text-align: center;
+    //}
+
+    img{
+        margin-top: 30px;
+        width: 200px;
+        height: auto;
+    }
+
+ 
+
+    #btn-grad {
+        background-image: linear-gradient(to right, #00d2ff 0%, #3a7bd5 51%, #00d2ff 100%);
+        border-radius: 8px;
+        color: white;
+        width: 100%;
+        padding: 8px 40px;
+    }
+    
+   
+    .btn {background-image: linear-gradient(to right, #4776E6 0%, #8E54E9  51%, #4776E6  100%)}
+    .btn {
+       margin-top: 100px;
+       padding: 15px 45px;
+       text-align: center;
+       text-transform: uppercase;
+       transition: 0.5s;
+       background-size: 200% auto;
+       color: white;            
+       box-shadow: 0 0 20px #eee;
+       border-radius: 10px;
+       display: block;
+     }
+
+     .btn {
+       background-position: right center; /* change the direction of the change here */
+       color: #fff;
+       text-decoration: none;
+     }
+    body{
+        --background: none;
+  background-image: url('../../assets/fondoLogin.png');
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+    }
+    
+    

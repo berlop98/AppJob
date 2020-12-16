@@ -1,0 +1,22 @@
+<ion-toolbar>
+  <ion-buttons slot="start">
+    <ion-button>
+      Cancelar
+    </ion-button>
+  </ion-buttons>
+  <ion-buttons slot="end">
+    <ion-button (click)="Actualiza()">
+      Actualizar
+    </ion-button>
+  </ion-buttons>
+
+</ion-toolbar>
+
+<ion-content>
+  <ion-grid>
+    <ion-row>
+      <ion-col size=12 ><h1 class="titulo">Habilidades</h1> <p>describe tus habilidad y fortalezas que te ayudaran en el ambito profesional</p></ion-col>
+      <ion-col size=12 class="ion-align-self-center"><ion-textarea id="area" [(ngModel)]="describe" value="{{descripcion}}"></ion-textarea></ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

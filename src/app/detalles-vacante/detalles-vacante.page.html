@@ -1,0 +1,94 @@
+
+
+<ion-toolbar color="tertiary">
+  <ion-buttons slot="secondary">
+      
+      
+    <ion-button (click)="regresa()">
+    
+      <ion-icon name="arrow-back-circle-outline"></ion-icon>
+    </ion-button>
+  </ion-buttons>
+
+  <ion-title>Detalles</ion-title>
+</ion-toolbar>
+<ion-content [fullscreen]="true" *ngFor="let persona of detallesPersona | async ">
+<ion-grid   *ngFor="let detalle of detalles | async"  >
+  <ion-row class="ion-margin" >
+    <ion-col size=12>
+      <img src="{{persona.foto}}" alt="">
+    </ion-col>
+
+    <ion-col size=12 >
+      <ion-text *ngIf="tipo==='moral'">
+        <h1 >{{persona.Razon_social}}</h1>
+      </ion-text>
+
+      <ion-text *ngIf="tipo==='fisica'">
+        <h1 >{{persona.Nombre}}  </h1>
+      </ion-text>
+
+   
+      
+      </ion-col>
+
+      <ion-col size=12>
+        <h3>Gerente General</h3>
+      </ion-col>
+
+      </ion-row>
+
+      <ion-row>
+        <ion-col size=12 >
+          <ion-icon name="location-sharp"></ion-icon> <ion-text class="font">{{detalle.estado}},{{detalle.ciudad}}</ion-text>
+        </ion-col>
+    
+        <ion-col size=12>
+          <ion-icon name="paper-plane-sharp"></ion-icon> <ion-text class="font">{{detalle.domicilio}}</ion-text>
+        </ion-col>
+     
+      </ion-row>
+    
+  
+
+  <ion-row class="ion-margin" id="row1">  
+    <ion-col size=12>
+      <ion-icon name="calendar-sharp"></ion-icon> <ion-text class="font">{{detalle.jornada}}</ion-text>
+    </ion-col>
+    <ion-col size=12>
+      <ion-icon name="calendar-sharp"></ion-icon> <ion-text class="font">{{detalle.horario}}</ion-text>
+    </ion-col>
+    <ion-col size=12>
+      <ion-icon name="cash-sharp"></ion-icon> <ion-text class="font"> $ {{detalle.salario}}</ion-text>
+    </ion-col>
+
+    
+  </ion-row>
+
+  <ion-row >  
+    <ion-col size=12>
+      <p class="font">{{detalle.descripcion}}</p>
+    </ion-col>
+   
+      
+      
+  
+      
+    
+   
+   
+
+    
+  </ion-row>
+
+  
+  <ion-button expand="block" color="tertiary" (click)="postula()">Postularme</ion-button>
+  <ion-button expand="block" color="warning" class="ion-margin-top" (click)="Perfil(RFC,tipo)">Ver perfil del ofertante</ion-button>
+   
+
+
+
+ 
+
+</ion-grid>
+</ion-content>
